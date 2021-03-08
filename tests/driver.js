@@ -1,6 +1,6 @@
 const { Builder, Capabilities } = require('selenium-webdriver')
-const seleniumHubServer = 'https://selenium.rexel.moin.plus/wd/hub'
-
+//const seleniumHubServer = 'https://selenium.rexel.moin.plus/wd/hub'
+const seleniumHubServer = process.env.SELENIUM_HUB
 const browser = process.env.BROWSER
 
 const getDriver = () => {
