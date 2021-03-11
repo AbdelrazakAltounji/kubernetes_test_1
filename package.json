@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --maxWorkers=4"
   },
   "author": "Victor Moin",
   "license": "ISC",
