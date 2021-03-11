@@ -1,4 +1,5 @@
 const { By, Key, until } = require('selenium-webdriver')
+const { getDriver } = require('../driver')
 const urlToTest = 'https://www.rexel.fr/frx/'
 
 describe('Rexel search test scenario', () => {
