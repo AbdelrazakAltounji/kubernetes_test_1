@@ -2,7 +2,7 @@ const { By, Key, until } = require('selenium-webdriver')
 const { getDriver } = require('../driver')
 const urlToTest = 'https://www.google.com/'
 
-describe('First Google search test scenario', () => {
+describe('French Google search test scenario', () => {
     let driver
 
     beforeAll(async () => {
