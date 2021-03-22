@@ -2,7 +2,7 @@ const { By, Key, until } = require('selenium-webdriver')
 const { getDriver } = require('../driver')
 const urlToTest = 'https://www.google.com/'
 
-describe('French Google search test scenario', () => {
+describe('1. Google search test scenario', () => {
     let driver
 
     beforeAll(async () => {
@@ -14,7 +14,7 @@ describe('French Google search test scenario', () => {
         const element = await driver.findElement(By.name('q'))
         element.sendKeys('google', Key.RETURN)
         await driver.wait(until.elementLocated(By.id('hdtb-msb')), 10000)
-        expect(await driver.getTitle()).toEqual('google - Recherche Google')
+        expect(await driver.getTitle()).toEqual('google - Google Search')
     })
 
     test('Googling "Rexel"', async () => {
@@ -22,7 +22,7 @@ describe('French Google search test scenario', () => {
         const element = await driver.findElement(By.name('q'))
         element.sendKeys('Rexel', Key.RETURN)
         await driver.wait(until.elementLocated(By.id('hdtb-msb')), 10000)
-        expect(await driver.getTitle()).toEqual('Rexel - Recherche Google')
+        expect(await driver.getTitle()).toEqual('Rexel - Google Search')
     })
 
     afterAll(async () => {

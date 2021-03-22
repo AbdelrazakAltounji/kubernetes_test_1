@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "example": "BROWSER=chrome SELENIUM_HUB=http://selenium-hub.selenium.svc.cluster.local:4444/wd/hub npm run test tests/google",
+    "example-local": "BROWSER=chrome SELENIUM_HUB=http://localhost:4444/wd/hub npm run test tests/google"
   },
   "author": "Victor Moin",
   "license": "ISC",
