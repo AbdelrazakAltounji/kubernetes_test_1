@@ -7,6 +7,7 @@ describe('1. Google search test scenario', () => {
 
     beforeAll(async () => {
         driver = getDriver()
+        allure.step('Step inside before all', () => {})
     })
 
     test('Googling "google"', async () => {
@@ -14,6 +15,9 @@ describe('1. Google search test scenario', () => {
         const element = await driver.findElement(By.name('q'))
         element.sendKeys('google', Key.RETURN)
         await driver.wait(until.elementLocated(By.id('hdtb-msb')), 10000)
+        driver.takeScreenshot().then((png) => {
+            allure.attachment('Screenshot', png, 'image/png')
+        })
         expect(await driver.getTitle()).toEqual('google - Google Search')
     })
 
@@ -26,6 +30,7 @@ describe('1. Google search test scenario', () => {
     })
 
     afterAll(async () => {
+        allure.step('Step inside after all', () => {})
         await driver.quit()
     })
 })

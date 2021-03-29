@@ -7,5 +7,7 @@ const reporter = new JasmineAllureReporter(
         resultsDir: 'allure-results',
     })
 )
+
 jasmine.getEnv().addReporter(reporter)
 jest.setTimeout(TIMEOUT)
+global.allure = reporter.getInterface()
