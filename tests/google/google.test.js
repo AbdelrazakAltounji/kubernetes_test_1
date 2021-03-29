@@ -12,9 +12,7 @@ describe('1. Google search test scenario', () => {
     })
 
     test('Googling "google"', async () => {
-        allure.step('load page', () => {
-            await driver.get(urlToTest)
-        })
+        await driver.get(urlToTest)
         const element = await driver.findElement(By.name('q'))
         element.sendKeys('google', Key.RETURN)
         await driver.wait(until.elementLocated(By.id('hdtb-msb')), 10000)
