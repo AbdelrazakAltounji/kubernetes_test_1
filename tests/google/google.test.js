@@ -12,13 +12,23 @@ describe('1. Google search test scenario', () => {
     })
 
     test('Googling "google"', async () => {
-        await driver.get(urlToTest)
+        allure.step('load page', () => {
+            await driver.get(urlToTest)
+        })
         const element = await driver.findElement(By.name('q'))
         element.sendKeys('google', Key.RETURN)
         await driver.wait(until.elementLocated(By.id('hdtb-msb')), 10000)
         const screenshot = await driver.takeScreenshot()
         await allure.attachment('screenshot', Buffer.from(screenshot, 'base64'), 'image/png')
         expect(await driver.getTitle()).toEqual('google - Google Search')
+    })
+
+    test('Googling "Rexel"', async () => {
+        await driver.get(urlToTest)
+        const element = await driver.findElement(By.name('q'))
+        element.sendKeys('Rexel', Key.RETURN)
+        await driver.wait(until.elementLocated(By.id('hdtb-msb')), 10000)
+        expect(await driver.getTitle()).toEqual('rexel - Google Search')
     })
 
     test('Googling "Rexel"', async () => {
