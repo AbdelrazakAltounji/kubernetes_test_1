@@ -23,7 +23,7 @@ describe('1. Google search test scenario', () => {
         expect(await driver.getTitle()).toEqual('google - Google Search')
     })
 
-    test('Googling "Rexel"', async () => {
+    test('Googling "Rexel" fail', async () => {
         await driver.get(urlToTest)
         const element = await driver.findElement(By.name('q'))
         element.sendKeys('Rexel', Key.RETURN)
