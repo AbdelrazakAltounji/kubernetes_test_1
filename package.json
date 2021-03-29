@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --testFailureExitCode 0",
     "example": "BROWSER=chrome SELENIUM_HUB=http://selenium-hub.selenium.svc.cluster.local:4444/wd/hub npm run test tests/google",
     "example-local": "BROWSER=chrome SELENIUM_HUB=https://selenium.cluster-test-platform-6474a10db2e260c615f9d4313ecdc8bc-0000.eu-de.containers.appdomain.cloud/wd/hub npm run test tests/google"
   },
