@@ -18,7 +18,7 @@ describe('1. Google search test scenario', () => {
         await driver.wait(until.elementLocated(By.id('hdtb-msb')), 10000)
         driver.takeScreenshot().then((image) => {
             console.log(typeof image)
-            allure.attachment('screenshot', Buffer.from(image), 'image/png')
+            allure.attachment('screenshot', Buffer.from(image, 'base64'), 'image/png')
         })
         expect(await driver.getTitle()).toEqual('google - Google Search')
     })
