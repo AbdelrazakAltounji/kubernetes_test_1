@@ -9,5 +9,8 @@ const reporter = new JasmineAllureReporter(
 )
 
 jasmine.getEnv().addReporter(reporter)
+jasmine.getEnv().addReporter({
+    specStarted: (result) => (jasmine.currentTest = result),
+})
 jest.setTimeout(TIMEOUT)
 global.allure = reporter.getInterface()

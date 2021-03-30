@@ -2,7 +2,7 @@ const { By, Key, until } = require('selenium-webdriver')
 const { getDriver } = require('../driver')
 const urlToTest = 'https://www.google.com/'
 
-describe('1. Google search test scenario', () => {
+describe('JS - Google - Test Suite 1', () => {
     let driver
 
     beforeAll(async () => {
@@ -11,13 +11,18 @@ describe('1. Google search test scenario', () => {
         })
     })
 
+    afterEach(async () => {
+        if (jasmine.currentTest.failedExpectations.length > 0) {
+            const screenshot = await driver.takeScreenshot()
+            await allure.attachment('screenshot', Buffer.from(screenshot, 'base64'), 'image/png')
+        }
+    })
+
     test('Googling "google"', async () => {
         await driver.get(urlToTest)
         const element = await driver.findElement(By.name('q'))
         element.sendKeys('google', Key.RETURN)
         await driver.wait(until.elementLocated(By.id('hdtb-msb')), 10000)
-        const screenshot = await driver.takeScreenshot()
-        await allure.attachment('screenshot', Buffer.from(screenshot, 'base64'), 'image/png')
         expect(await driver.getTitle()).toEqual('google - Google Search')
     })
 

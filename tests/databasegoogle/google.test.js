@@ -4,7 +4,7 @@ const { pool } = require('../database')
 const urlToTest = 'https://www.google.com/'
 const databaseQuery = 'SELECT * FROM search'
 
-describe('1. Google search test scenario', () => {
+describe('JS - Google Database - Test Suite 1', () => {
     let driver
     let results
 
@@ -14,6 +14,13 @@ describe('1. Google search test scenario', () => {
             driver = getDriver()
         } catch (error) {
             throw new Error('Error in beforeAll : ', error)
+        }
+    })
+
+    afterEach(async () => {
+        if (jasmine.currentTest.failedExpectations.length > 0) {
+            const screenshot = await driver.takeScreenshot()
+            await allure.attachment('screenshot', Buffer.from(screenshot, 'base64'), 'image/png')
         }
     })
 
