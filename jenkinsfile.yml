@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+          
+
+    tools{nodejs "node"}
+
+    stages{
+
+        stage('Cloning Git'){
+            steps{
+                git 'https://'
+            }
+        }
+    
+        stage('Install dependencies'){
+            steps{
+                sh 'cd ./tests/google'
+                sh 'npm install'
+            }
+        }
+    
+        stage('test'){
+            steps{
+                sh 'BROWSER=firefox SELENIUM_HUB=http://selenium-hub.selenium.svc.cluster.local:4444/wd/hub npm run test tests/google'
+
+                
+        
+        
+
+
+            }
+        }
+    }
+
+
+
+
+}
