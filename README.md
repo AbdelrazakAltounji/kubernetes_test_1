@@ -10,7 +10,7 @@ IBM Test Platform Cloud est composé de ces éléments :
 
 -   **[Jenkins](https://www.jenkins.io)** est un outil CI/CD avec lequel on peut créer nos pipelines qui seront charger de récupérer nos codes sources.
 
-- **[SquashTM](https://www.sqasuhtm.com)** c'est un outil de test management qui va declencher notre pipeline lorsque on veut.
+- **[SquashTM](https://www.squashtest.com/product-squash-tm)** c'est un outil de test management qui va declencher notre pipeline lorsque on veut.
  
 
 ---
