@@ -23,7 +23,7 @@ pipeline {
     
         stage('test'){
             steps{
-                sh 'Browser=firefox SELENIUM_HUB=http://selenium-hub.selenium.svc.cluster.local:4444/wd/hub npm run test tests/google'
+                build 'test'
 
                 
         
