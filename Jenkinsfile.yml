@@ -10,10 +10,16 @@ pipeline {
             steps{
                 git branch: "master"
                     url: 'https://github.com/AbdelrazakAltounji/kubernetes_test_1.git'
-                    bat '.\test clean compile'
+                    sh 'javac test.java'
             }
         }
+       stage('running'){
+        steps{
+        
+            sh 'java test'
+        } 
     
+    }
       
     
     }
