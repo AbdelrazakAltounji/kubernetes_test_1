@@ -1,7 +1,7 @@
 pipeline {
     agent any
           
-    
+    tools{bodejs "node"}
     
 
     stages{
@@ -10,17 +10,21 @@ pipeline {
             steps{
                 git branch: "master"
                     url: 'https://github.com/AbdelrazakAltounji/kubernetes_test_1.git'
-                    sh 'javac test.java'
+                    
             }
         }
-       stage('running'){
+       stage('install dependencies'){
         steps{
         
-            sh 'java test'
+            sh 'npm install'
         } 
     
     }
+      stage('Test') {
+        steps {
+            sh 'npm run test ./tests/google'
       
+      }
     
     }
 
