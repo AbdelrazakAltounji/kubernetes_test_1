@@ -1,34 +1,13 @@
 pipeline {
-    agent any
-          
-    tools{bodejs "node"}
-    
-
-    stages{
-
-        stage('Cloning Git'){
-            steps{
-                git branch: "master"
-                    url: 'https://github.com/AbdelrazakAltounji/kubernetes_test_1.git'
-                    
-            }
-        }
-       stage('install dependencies'){
-        steps{
-        
-            sh 'npm install'
-        } 
-    
-    }
-      stage('Test') {
-        steps {
-            sh 'npm run test ./tests/google'
-      
+  agent any
+ 
+  tools {nodejs "node"}
+ 
+  stages {
+    stage('Example') {
+      steps {
+        sh 'echo HI ABWael'
       }
-    
     }
-
-
-
-
+  }
 }
