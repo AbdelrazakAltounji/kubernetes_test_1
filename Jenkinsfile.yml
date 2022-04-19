@@ -23,7 +23,7 @@ pipeline {
     
         stage('test'){
             steps{
-                build 'test'
+                build 'test.java'
 
                 
         
