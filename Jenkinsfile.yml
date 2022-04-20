@@ -4,11 +4,7 @@ pipeline {
   tools {nodejs "nodeJS"}
  
   stages {
-    stage('Clonning') {
-      steps {
-        git 'https://github.com/AbdelrazakAltounji/kubernetes_test_1.git'
-      }
-    }
+    
     stage('Install Dependencies') {
       steps {
         sh 'npm install'
