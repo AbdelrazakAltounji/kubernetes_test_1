@@ -16,7 +16,7 @@ pipeline {
     stage ('Run') {
       steps {
       
-        sh 'npm run test ./tests/google'  
+        sh 'npm run test ./tests'  
       }
     }
   
