@@ -5,11 +5,7 @@ pipeline {
  
   stages {
   
-    stage('Git Clonning') {
-      steps {
-        git 'https://github.com/AbdelrazakAltounji/kubernetes_test_1.git'
-      }
-    }
+   
     
     stage('Install Dependencies') {
       steps {
