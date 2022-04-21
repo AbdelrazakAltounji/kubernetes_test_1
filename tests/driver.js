@@ -1,6 +1,6 @@
 const { Builder, Capabilities } = require('selenium-webdriver')
-const seleniumHubServer = process.env.SELENIUM_HUB
-const browser = process.env.BROWSER
+const seleniumHubServer = "https://selenium.wap-test-platform-iks-086d0feb796ce72f6b820703a879a158-0000.eu-de.containers.appdomain.cloud"
+const browser = 'firefox'
 
 const getDriver = () => {
     switch (browser) {
