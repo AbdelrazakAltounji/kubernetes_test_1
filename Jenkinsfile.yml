@@ -1,8 +1,7 @@
 pipeline {
-  agent {
+  agent any
         
- docker { image 'nginx:latest' }
-      }
+ 
  
   tools {nodejs 'nodeJs'}
  
