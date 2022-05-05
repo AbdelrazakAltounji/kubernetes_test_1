@@ -7,8 +7,21 @@ pipeline {
  
   stages {
   
+  
+  stage{'install nightwatch'}
+      steps{
+        sh 'npm install nightwatch'
+        }
+     }
+        
+        
+   stage{'install driver'}
+      steps{
+      sh 'npm install geckodriver --save-dev'
+      
+    }
+   }
    
-    
     stage('Install Dependencies') {
       steps {
         sh 'npm install'
