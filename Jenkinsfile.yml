@@ -11,6 +11,7 @@ pipeline {
   stage{'install nightwatch'}
       steps{
         sh 'npm install nightwatch'
+        sh 'npx nightwatch'
         }
      }
         
